@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "origins": [
+    "stupidity:scarlet_origin",
+    "stupidity:zoey_origin",
+    "stupidity:admin_origin",
+    "stupidity:chase_origin"
+  ]
+}

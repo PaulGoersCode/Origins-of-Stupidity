@@ -1,0 +1,14 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "setblock ~ ~2 ~ minecraft:chest 1 0 {LootTable:"minecraft:chests/florian_flower_power"}"
+    },
+    "cooldown": 5,
+    "hud_render": {
+        "should_render": true
+    },
+    "key": {
+        "key": "key.origins.primary.active"
+    }
+}

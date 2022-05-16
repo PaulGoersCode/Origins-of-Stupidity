@@ -1,0 +1,10 @@
+{
+    "powers": [
+       "stupidity:loot_table_test"
+    ],
+    "icon": "minecraft:leather",
+    "order": "1",
+    "impact": "3",
+    "name": "Admin Origin",
+    "description": "Work in Progress"
+}

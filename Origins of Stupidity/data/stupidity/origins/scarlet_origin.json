@@ -1,0 +1,19 @@
+{
+    "powers": [
+        "extraorigins:bite_sized",
+    	"extraorigins:nimble",
+	    "extraorigins:small_appetite",
+	    "origins:climbing",
+	    "extraorigins:jockey",
+        "icarus:powered_flight",
+        "origins:launch_into_air",
+		"origins:aerial_combatant",
+        "moborigins:queen_bee",
+        ""
+    ],
+    "icon": "minecraft:leather",
+    "order": "3",
+    "impact": "3",
+    "name": "Scarlet Origin",
+    "description": "Work in Progress"
+}
