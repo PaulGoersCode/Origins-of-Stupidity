@@ -1,0 +1,34 @@
+{
+    "type": "origins:multiple",
+    "name": "",
+    "description": "",
+    "heal": {
+        "type": "origins:damage_over_time",
+        "interval": 20,
+        "onset_delay": 5,
+        "damage": -1.0,
+        "condition": {
+            "type": "origins:adjacent",
+            "adjacent_condition": {
+                "type": "origins:in_tag",
+                "tag": "minecraft:bee_regeneration"
+            },
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    "refresh": {
+        "type": "origins:exhaust",
+        "interval": 20,
+        "exhaustion": -1.0,
+        "condition": {
+                "type": "origins:adjacent",
+                "adjacent_condition": {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:bee_regeneration"
+                },
+                "comparison": ">=",
+                "compare_to": 1
+        }
+    }
+}

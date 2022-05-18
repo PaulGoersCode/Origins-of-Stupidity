@@ -8,12 +8,13 @@
         "icarus:powered_flight",
         "origins:launch_into_air",
 		"origins:aerial_combatant",
+        "origins:cat_vision",
         "moborigins:queen_bee",
-        ""
+        "moborigins:flower_power"
     ],
     "icon": "minecraft:leather",
-    "order": "3",
-    "impact": "3",
+    "order": 13,
+    "impact": 3,
     "name": "Scarlet Origin",
     "description": "Work in Progress"
 }
