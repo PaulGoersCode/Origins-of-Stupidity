@@ -1,0 +1,92 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:if_else",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:in_rain"
+                },
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water"
+                }
+            ]
+        },
+        "if_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 16.0,
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                "effect": "minecraft:glowing",
+                                "duration": 380,
+                                "amplifier": 0
+                            }
+                        }
+                    },
+                    "bientity_condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:invert",
+                                "condition": {
+                                    "type": "origins:target_condition",
+                                    "condition": {
+                                        "type": "origins:origin",
+                                        "origin": "stupidity:zoey_origin"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound custom.siren master @p ~ ~ ~"
+                }
+            ]
+        },
+        "else_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 16.0,
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:damage",
+                            "amount": 3,
+                            "source": {
+                                "name": "siren song",
+                                "bypasses_armor": true,
+                                "magic": true
+                            }
+                        }
+                    },
+                    "include_target": true
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound custom.inhuman-screech master @p ~ ~ ~"
+                }
+            ]
+        }
+    },
+    "cooldown": 380,
+    "hud_render": {
+        "should_render": true
+    },
+    "key": {
+        "key": "key.origins.primary_active"
+    },
+    "name": "Testing",
+    "description": "If this is showing, it's working"
+}

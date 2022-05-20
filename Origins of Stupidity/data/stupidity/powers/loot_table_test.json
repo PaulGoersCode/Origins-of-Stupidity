@@ -1,9 +1,17 @@
 {
     "type": "origins:active_self",
     "entity_action": {
-        "type": "origins:execute_command",
-        "command": "loot give @p loot minecraft:entities/florian_flower_power"
-
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "loot give @p loot minecraft:entities/florian_flower_power"
+            },
+            {
+                "type": "origins:exhaust",
+                "amount": 32.0
+            }
+        ]
     },
     "cooldown": 20,
     "hud_render": {
@@ -11,5 +19,7 @@
     },
     "key": {
         "key": "key.origins.primary_active"
-    }
+    },
+    "name": "Plant Summoning",
+    "description": "You can use your florian powers to summon plants from the ether, at the cost of your hunger"
 }

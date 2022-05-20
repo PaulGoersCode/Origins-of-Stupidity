@@ -1,10 +1,15 @@
 {
     "powers": [
-       "stupidity:loot_table_test"
+        "stupidity:loot_table_test",
+        "extraorigins:green_thumb",
+	    "extraorigins:photosynthesis",
+	    "extraorigins:absorbing",
+	    "extraorigins:flammable",
+	    "extraorigins:nectarivore"
     ],
-    "icon": "minecraft:slime_ball",
+    "icon": "minecraft:poppy",
     "order": 11,
-    "impact": 3,
+    "impact": 2,
     "name": "Admin Origin",
     "description": "Work in Progress"
 }

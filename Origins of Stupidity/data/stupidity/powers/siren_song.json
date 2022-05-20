@@ -1,18 +1,16 @@
 {
     "type": "origins:active_self",
-    "name": "Siren Song",
-    "description": "The ethereal sounds you can produce empower fellow sirens and weaken other entities. you should only use this in water though.",
     "entity_action": {
         "type": "origins:if_else",
         "condition": {
             "type": "origins:or",
             "conditions": [
                 {
-                    "type": "origins:submerged_in",
-                    "fluid": "minecraft:water"
+                    "type": "origins:in_rain"
                 },
                 {
-                    "type": "origins:in_rain"
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water"
                 }
             ]
         },
@@ -20,91 +18,91 @@
             "type": "origins:and",
             "actions": [
                 {
-                    "type": "origins:apply_effect",
-                    "effects": [
-                        {
-                            "effect": "minecraft:strength",
-                            "duration": 400,
-                            "amplifier": 0,
-                            "show_icon": true
-                        },
-                        {
-                            "effect": "minecraft:speed",
-                            "duration": 400,
-                            "amplifier": 1,
-                            "show_icon": true
-                        },
-                        {
-                            "effect": "minecraft:jump_boost",
-                            "duration": 400,
-                            "amplifier": 1,
-                            "show_icon": true
-                        },
-                        {
-                            "effect": "minecraft:invisibility",
-                            "duration": 400,
-                            "amplifier": 0,
-                            "show_icon": true
+                    "type": "origins:area_of_effect",
+                    "radius": 16.0,
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:apply_effect",
+                                    "effect": {
+                                        "effect": "minecraft:glowing",
+                                        "duration": 380,
+                                        "amplifier": 0
+                                    }
+                                },
+                                {
+                                    "type": "origins:apply_effect",
+                                    "effect": {
+                                        "effect": "minecraft:strength",
+                                        "duration": 380,
+                                        "amplifier": 0
+                                    }
+                                },
+                                {
+                                    "type": "origins:apply_effect",
+                                    "effect": {
+                                        "effect": "minecraft:speed",
+                                        "duration": 380,
+                                        "amplifier": 1
+                                    }
+                                },
+                                {
+                                    "type": "origins:apply_effect",
+                                    "effect": {
+                                        "effect": "minecraft:jump_boost",
+                                        "duration": 380,
+                                        "amplifier": 1
+                                    }
+                                },
+                                {
+                                    "type": "origins:apply_effect",
+                                    "effect": {
+                                        "effect": "minecraft:invisibility",
+                                        "duration": 380,
+                                        "amplifier": 0
+                                    }
+                                }
+                            ]
                         }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "origins:origin",
-                            "origin": "stupidity:zoey_origin"
-                        }
-                    ]
+                    },
+                    "bientity_condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:invert",
+                                "condition": {
+                                    "type": "origins:target_condition",
+                                    "condition": {
+                                        "type": "origins:origin",
+                                        "origin": "stupidity:zoey_origin"
+                                    }
+                                }
+                            }
+                        ]
+                    }
                 },
                 {
-                    "type": "origins:apply_effect",
-                    "effects": [
-                        {
-                            "effect": "minecraft:weakness",
-                            "duration": 400,
-                            "amplifier": 1,
-                            "show_icon": true
-                        },
-                        {
-                            "effect": "minecraft:slowness",
-                            "duration": 400,
-                            "amplifier": 2,
-                            "show_icon": true
-                        },
-                        {
-                            "effect": "minecraft:blindness",
-                            "duration": 400,
-                            "amplifier": 0,
-                            "show_icon": true
-                        },
-                        {
-                            "effect": "minecraft:glowing",
-                            "duration": 400,
-                            "amplifier": 0,
-                            "show_icon": true
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "origins:origin",
-                            "origin": "stupidity:zoey_origin",
-                            "inverted": true
-                        }
-                    ]
+                    "type": "origins:execute_command",
+                    "command": "playsound custom.siren master @p ~ ~ ~"
                 }
             ]
         },
-        "else_action":{
+        "else_action": {
             "type": "origins:and",
             "actions": [
                 {
                     "type": "origins:area_of_effect",
-                    "radius": 16,
+                    "radius": 16.0,
                     "bientity_action": {
                         "type": "origins:target_action",
                         "action": {
                             "type": "origins:damage",
                             "amount": 3,
                             "source": {
-                                "name": "magic",
+                                "name": "siren song",
                                 "bypasses_armor": true,
                                 "magic": true
                             }
@@ -113,17 +111,19 @@
                     "include_target": true
                 },
                 {
-                    "type": "origins:play_sound",
-                    "sound": "minecraft:custom.inhuman-screech" 
+                    "type": "origins:execute_command",
+                    "command": "playsound entity.ghast.hurt master @p ~ ~ ~"
                 }
             ]
         }
     },
-    "cooldown": 60,
+    "cooldown": 380,
     "hud_render": {
         "should_render": true
     },
     "key": {
         "key": "key.origins.primary_active"
-    }
+    },
+    "name": "Testing",
+    "description": "If this is showing, it's working"
 }

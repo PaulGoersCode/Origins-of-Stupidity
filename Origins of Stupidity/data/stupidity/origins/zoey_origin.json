@@ -1,11 +1,10 @@
 {
     "powers": [
-       "mermod:fabulous_fins",
        "stupidity:siren_song"
     ],
     "icon": "minecraft:leather",
     "order": 14,
     "impact": 3,
-    "name": "Zoey Origin",
+    "name": "Siren",
     "description": "Work in Progress"
 }
